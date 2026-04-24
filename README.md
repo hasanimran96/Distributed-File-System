@@ -162,7 +162,7 @@ Enter server port
 9999
 ```
 
-> **Note:** If running everything on one machine, use `127.0.0.1` (localhost) as the IP and make sure each server/client runs in its own directory.
+> **Note:** If running everything on one machine, use `127.0.0.1` (localhost) as the IP, make sure each server/client runs in its own directory, and ensure each server uses different `port`/`c_port` values. Reusing the same ports on localhost will cause bind conflicts.
 
 ---
 
