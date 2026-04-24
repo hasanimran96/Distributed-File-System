@@ -37,8 +37,8 @@ This project simulates a distributed file system across a minimum of three machi
   (Root/)         (Root/)          (Root/)
 ```
 
-- **Servers** communicate with each other over a dedicated inter-server port (default: `5555`).
-- **Clients** connect to any single server over the client-facing port (default: `9999`).
+- **Servers** communicate with each other over inter-server ports. In a multi-machine deployment, `5555` is an example default per host; when running multiple server processes on one machine, each server instance must use a **unique** inter-server port (for example, `5555`, `5556`, `5557`).
+- **Clients** connect to a server's client-facing port. In a multi-machine deployment, `9999` is an example default per host; when running multiple server processes on one machine, each server instance must use a **unique** client port (for example, `9999`, `9998`, `9997`).
 - Each server maintains a **global file list** — a registry of every file in the cluster and which server owns it.
 - If a requested file lives on a different server, the client is transparently **redirected** to the correct server.
 
